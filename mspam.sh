@@ -27,9 +27,9 @@ banner() {
     clear
     echo -e "\e[1;31m"
     if ! [ -x "$(command -v figlet)" ]; then
-        echo 'Introducing TBomb'
+        echo 'Introducing mspam'
     else
-        figlet TBomb
+        figlet mspam
     fi
     if ! [ -x "$(command -v toilet)" ]; then
         echo -e "\e[4;34m This Bomber Was Created By \e[1;32mSpeedX \e[0m"
@@ -82,7 +82,7 @@ install_deps(){
     else
         echo "We could not install dependencies."
         echo "Please make sure you have git, python3, pip3 and requirements installed."
-        echo "Then you can execute bomber.py ."
+        echo "Then you can execute mspam.py ."
         exit
     fi
 }
@@ -115,19 +115,19 @@ do
     read ch
     clear
     if [ $ch -eq 1 ];then
-        $PYTHON bomber.py --sms
+        $PYTHON mspampy --sms
         exit
     elif [ $ch -eq 2 ];then
-        $PYTHON bomber.py --call
+        $PYTHON mspam.py --call
         exit
     elif [ $ch -eq 3 ];then
-        $PYTHON bomber.py --mail
+        $PYTHON mspam.py --mail
         exit
     elif [ $ch -eq 4 ];then
         echo -e "\e[1;34m Downloading Latest Files..."
         rm -f .update
-        $PYTHON bomber.py --update
-        echo -e "\e[1;34m RUN TBomb Again..."
+        $PYTHON mspam.py --update
+        echo -e "\e[1;34m RUN mspam Again..."
         pause
         exit
     elif [ $ch -eq 5 ];then
